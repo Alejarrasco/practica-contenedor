@@ -1,20 +1,20 @@
-package bo.edu.ucb.practicacontenedor.model;
+package bo.edu.ucb.practicacontenedor.dto;
 
 public class Task {
     
-    private final String taskId;
+    private final int taskId;
     private final String Name;
     private final String Date;
     private final String status;
 
-    public Task(String taskId, String Name, String Date, String status) {
+    public Task(int taskId, String Name, String Date, String status) {
         this.taskId = taskId;
         this.Name = Name;
         this.Date = Date;
         this.status = status;
     }
 
-    public String getTaskId() {
+    public int getTaskId() {
         return taskId;
     }
 
