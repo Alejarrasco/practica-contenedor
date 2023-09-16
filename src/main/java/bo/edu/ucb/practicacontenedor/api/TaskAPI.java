@@ -1,5 +1,6 @@
 package bo.edu.ucb.practicacontenedor.api;
 
+import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 
@@ -11,7 +12,6 @@ import bo.edu.ucb.practicacontenedor.bl.TaskBl;
 import bo.edu.ucb.practicacontenedor.dto.Task;
 
 @RestController
-@RequestMapping(value = "/api/v1/task")
 public class TaskAPI {
 
     private TaskBl taskBl;
@@ -20,16 +20,32 @@ public class TaskAPI {
         this.taskBl = new TaskBl();
     }
 
-    @GetMapping(path = "/")
-    public void create(Task task){
+    @GetMapping(path = "/api/v1/task")
+    public Map<String, String> create(Task task){
         taskBl.create(task);
-    }
-/* 
-    public Map listAll(){
-        return taskBl.listAll();
+        Map<String, String> result = new HashMap<String, String>();
+        result.put("code", "TASK-0000");
+        result.put("result", "Task created successfully");
+        result.put("errorMessage", "");
+        return result;
     }
 
-    public Map delete(int taskId){
+    public Map<String,String> listAll(){
+        
+        Map<String, String> result = new HashMap<String, String>();
+        result.put("code", "TASK-0000");
+        result.put("result", "Task deleted successfully");
+        result.put("errorMessage", "");
+        result.put("resultSet", taskBl.listAll().toString());
+        return result;
+    }
+
+    public Map<String,String> delete(int taskId){
         taskBl.delete(taskId);
-    } */
+        Map<String, String> result = new HashMap<String, String>();
+        result.put("code", "TASK-0000");
+        result.put("result", "Task deleted successfully");
+        result.put("errorMessage", "");
+        return result;
+    }
 }
