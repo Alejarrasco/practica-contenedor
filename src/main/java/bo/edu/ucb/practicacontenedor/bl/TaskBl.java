@@ -7,8 +7,17 @@ import bo.edu.ucb.practicacontenedor.dto.Task;
 
 public class TaskBl {
 
-    List<Task> database = new ArrayList<>();
+    private List<Task> database;
     
+    public TaskBl() {
+        this.database = new ArrayList<>();
+        //Test tasks
+        this.database.add(new Task(1, "Tarea 1", "2021-08-01", "Pendiente"));
+        this.database.add(new Task(2, "Tarea 2", "2021-08-02", "Pendiente"));
+    }
+
+
+
     public void create(Task task){
         database.add(task);
     }

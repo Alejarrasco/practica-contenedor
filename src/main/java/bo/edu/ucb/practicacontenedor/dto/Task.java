@@ -2,20 +2,20 @@ package bo.edu.ucb.practicacontenedor.dto;
 
 public class Task {
     
-    private final int taskId;
+    private final int TaskId;
     private final String Name;
     private final String Date;
-    private final String status;
+    private final String Status;
 
     public Task(int taskId, String Name, String Date, String status) {
-        this.taskId = taskId;
+        this.TaskId = taskId;
         this.Name = Name;
         this.Date = Date;
-        this.status = status;
+        this.Status = status;
     }
 
     public int getTaskId() {
-        return taskId;
+        return TaskId;
     }
 
     public String getName() {
@@ -27,11 +27,11 @@ public class Task {
     }
 
     public String getStatus() {
-        return status;
+        return Status;
     }
 
     @Override
     public String toString() {
-        return "Task{" + "taskId=" + taskId + ", Name=" + Name + ", Date=" + Date + ", status=" + status + '}';
+        return "Task{" + "taskId=" + TaskId + ", Name=" + Name + ", Date=" + Date + ", status=" + Status + '}';
     }
 }
