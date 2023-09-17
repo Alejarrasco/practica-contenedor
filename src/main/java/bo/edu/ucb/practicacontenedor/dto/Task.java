@@ -2,10 +2,10 @@ package bo.edu.ucb.practicacontenedor.dto;
 
 public class Task {
     
-    private final int TaskId;
-    private final String Name;
-    private final String Date;
-    private final String Status;
+    private int TaskId;
+    private String Name;
+    private String Date;
+    private String Status;
 
     public Task(int taskId, String Name, String Date, String status) {
         this.TaskId = taskId;
@@ -33,5 +33,21 @@ public class Task {
     @Override
     public String toString() {
         return "Task{" + "taskId=" + TaskId + ", Name=" + Name + ", Date=" + Date + ", status=" + Status + '}';
+    }
+
+    public void setTaskId(int taskId) {
+        TaskId = taskId;
+    }
+
+    public void setName(String name) {
+        Name = name;
+    }
+
+    public void setDate(String date) {
+        Date = date;
+    }
+
+    public void setStatus(String status) {
+        Status = status;
     }
 }
